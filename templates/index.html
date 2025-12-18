@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Resume Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Resume Analyzer</h1>
+        <form id="resume-form">
+            <label for="resume">Paste your resume:</label>
+            <textarea id="resume" name="resume" rows="10" placeholder="Paste plain text resume here"></textarea>
+            
+            <label for="role">Select Job Role:</label>
+            <select id="role" name="role">
+                <option value="">-- Choose a role --</option>
+                <option value="AI Engineer">AI Engineer</option>
+                <option value="Data Scientist">Data Scientist</option>
+                <option value="Web Developer">Web Developer</option>
+            </select>
+
+            <button type="submit">Analyze Resume</button>
+        </form>
+
+        <div id="result" class="result-section" style="display:none;">
+            <h2>Analysis Result</h2>
+            <p><strong>Extracted Skills:</strong> <span id="skills"></span></p>
+            <p><strong>Skill Match:</strong> <span id="match"></span>%</p>
+            <h3>AI Suggestions</h3>
+            <ul id="suggestions"></ul>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
